@@ -1,0 +1,16 @@
+#import "../base/bookThumb.gql"
+
+query booksByAuthorQuery($author: String!, $limit: Int = 99) {
+  booksByAuthor: authorCollection(where: { slug: $author }, limit: 1) {
+    items {
+      name
+      linkedFrom {
+        bookCollection(limit: $limit) {
+          items {
+            ...fieldsBookThumb
+          }
+        }
+      }
+    }
+  }
+}

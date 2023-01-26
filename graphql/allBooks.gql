@@ -1,0 +1,9 @@
+#import "../base/bookThumb.gql"
+
+query allBooksQuery($limit: Int = 999) {
+  allBooks: bookCollection(limit: $limit, order: [title_ASC]) {
+    items {
+      ...fieldsBookThumb
+    }
+  }
+}

@@ -1,0 +1,15 @@
+
+@use "sass:math";
+@import "variables";
+
+// @import "bootstrap/scss/bootstrap.scss";
+// @import "bootstrap-vue/src/index.scss";
+
+@import "typography";
+
+html,
+body,
+#__nuxt,
+#__layout {
+  height: 100%;
+}

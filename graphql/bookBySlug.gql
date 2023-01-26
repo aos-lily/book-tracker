@@ -1,0 +1,32 @@
+#import "../base/bookThumb.gql"
+
+query bookBySlugQuery($slug: String!) {
+  book: bookCollection(where: { slug: $slug }, limit: 1) {
+    items {
+      ...fieldsBookThumb
+      genres: genreCollection(limit: 10) {
+        items {
+          name
+          slug
+        }
+      }
+      series {
+        title
+        slug
+      }
+      seriesOrder
+      synopsis {
+        json
+      }
+      cover {
+        url(transform: { width: 300, height: 300 })
+      }
+      publishedDate
+      startDate
+      completedDate
+      review {
+        json
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+#import "../base/bookThumb.gql"
+
+query booksByGenreQuery($genre: String!, $limit: Int = 99) {
+  booksByGenre: genreCollection(where: { slug: $genre }, limit: 1) {
+    items {
+      name
+      linkedFrom {
+        bookCollection(limit: $limit) {
+          items {
+            ...fieldsBookThumb
+          }
+        }
+      }
+    }
+  }
+}

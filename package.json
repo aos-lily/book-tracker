@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "graphql": "^16.6.0",
+    "nuxt": "3.0.0",
+    "nuxt-graphql-client": "^0.2.24",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0"
+  },
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.0.2",
+    "@contentful/rich-text-types": "^16.0.2",
+    "bootstrap": "^5.2.3",
+    "gsap": "npm:@gsap/member"
+  }
+}

@@ -1,0 +1,13 @@
+fragment fieldsBookThumb on Book {
+  title
+  slug
+  authors: authorCollection(limit: 9) {
+    items {
+      name
+      slug
+    }
+  }
+  cover {
+    url(transform: { width: 300, height: 300 })
+  }
+}

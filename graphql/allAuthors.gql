@@ -1,0 +1,13 @@
+query allAuthorsQuery($limit: Int = 99) {
+  allAuthors: authorCollection(limit: $limit, order: [name_ASC]) {
+    items {
+      name
+      slug
+      linkedFrom {
+        bookCollection(limit: $limit) {
+          total
+        }
+      }
+    }
+  }
+}
