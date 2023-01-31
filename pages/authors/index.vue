@@ -2,6 +2,7 @@
   <div>
     <h1>All Authors</h1>
     <div
+      ref="authorsList"
       v-for="(author, i) of authors"
       :key="`author-${i}`"
     >
@@ -14,7 +15,14 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { animateInOut } from "@/composables/animateInOut";
+
 const { data, error } = await useAsyncGql("allAuthorsQuery", { limit: 100 });
 
 const authors = data?.value.allAuthors.items;
+
+const authorsList = ref();
+
+animateInOut(authorsList);
 </script>

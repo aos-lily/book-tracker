@@ -12,11 +12,6 @@ export default defineNuxtConfig({
       GQL_HOST: `https://graphql.contentful.com/content/v1/spaces/${process.env.CTF_SPACE_ID}?access_token=${process.env.CTF_CDA_ACCESS_TOKEN}`
     }
   },
-  // runtimeConfig: {
-  //   public: {
-  //     GQL_HOST: 'https://api.spacex.land/graphql' // overwritten by process.env.GQL_HOST
-  //   }
-  // },
 
   vite: {
     css: {
@@ -29,5 +24,9 @@ export default defineNuxtConfig({
     define: {
       "process.env.DEBUG": false
     }
+  },
+
+  build: {
+    transpile: ["gsap"]
   }
 });

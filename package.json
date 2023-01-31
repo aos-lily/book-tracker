@@ -18,6 +18,6 @@
     "@contentful/rich-text-html-renderer": "^16.0.2",
     "@contentful/rich-text-types": "^16.0.2",
     "bootstrap": "^5.2.3",
-    "gsap": "npm:@gsap/member"
+    "gsap": "^3.11.4"
   }
 }
